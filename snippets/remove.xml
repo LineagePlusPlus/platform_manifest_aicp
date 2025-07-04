@@ -26,4 +26,7 @@
   <remove-project name="LineageOS/android_vendor_lineage" />
   <!-- remove-project name="platform/packages/apps/OnDeviceAppPrediction" / -->
   <remove-project name="platform/packages/modules/DnsResolver" />
+
+  <!-- Useless and proprietary -->
+  <remove-project name="LineageOS/android_external_unrar" />
 </manifest>
