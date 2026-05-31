@@ -8,13 +8,6 @@
            sync-c="true"
            sync-j="8" />
 
-  <remote  name="lineage"
-           fetch="https://git@github.com/"
-           review="review.lineageos.org"
-           revision="refs/heads/lineage-23.2"
-           sync-c="true"
-           sync-j="8" />
-
   <remote  name="omni"
            fetch="https://git@github.com/"
            review="gerrit.omnirom.org"
@@ -33,19 +26,17 @@
            sync-c="true"
            sync-j="8" />
 
-  <!-- Include Lineage repos -->
-  <include name="snippets/lineage.xml" />
-
-  <!-- Remove needed AOSP and Lineage Repos that we have a fork of-->
+  <!-- Remove needed AOSP and Lineage Repos that we have a fork of -->
   <include name="snippets/remove.xml" />
 
   <!-- Remove Lineage repos that we don't have a fork of and don't need -->
-  <include name="snippets/debloat.xml" />
+  <include name="snippets/ignore.xml" />
 
   <!-- AICP non-platform -->
   <project path="device/aicp/sepolicy" name="AICP/device_aicp_sepolicy" remote="aicp" />
   <project path="frameworks/opt/aicpgear" name="AICP/frameworks_opt_aicpgear" remote="aicp" />
   <project path="frameworks/opt/slimrecent" name="AICP/frameworks_opt_slimrecent" remote="aicp" />
+  <project path="lineage/mirror" name="AICP/mirror" groups="infra" revision="main" remote="aicp" />
   <project path="lineage/scripts" name="AICP/scripts" groups="tools" remote="aicp" revision="main" />
   <project path="packages/apps/AicpExtras" name="AICP/packages_apps_AicpExtras" remote="aicp" />
   <project path="packages/apps/GameSpace" name="AICP/packages_apps_GameSpace" remote="aicp" />
@@ -58,7 +49,7 @@
   <project path="packages/resources/deviceparts" name="AICP/packages_resources_deviceparts" remote="aicp" />
   <project path="packages/resources/devicesettings" name="AICP/packages_resources_devicesettings" remote="aicp" />
   <project path="packages/services/OmniJaws" name="AICP/packages_services_OmniJaws" remote="aicp" />
-  <project path="prebuilts/tools-aicp" name="LineageOS/android_prebuilts_tools-lineage" clone-depth="1" remote="lineage" />
+  <project path="prebuilts/tools-aicp" name="LineageOS/android_prebuilts_tools-lineage" clone-depth="1" />
   <project path="vendor/aicp" name="LineagePlusPlus/vendor_aicp" remote="aicp" />
 
   <!-- AICP platform -->
